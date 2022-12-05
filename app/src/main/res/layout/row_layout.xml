@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_marginBottom="1dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgproduct"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/india"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+           />
+
+        <TextView
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:id="@+id/txtViewproduct"
+            android:textAlignment="center"
+            android:hint="Chinese"
+            android:layout_marginLeft="10dp"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    android:background="@drawable/loo"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+            android:id="@+id/india"
+            android:layout_width="match_parent"
+            android:layout_height="222dp"
+            android:layout_marginTop="130dp"
+            android:src="@drawable/india"/>
+
+    <ImageView
+
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:src="@drawable/crea" />
+
+
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="For Indians"
+            android:textColor="#fff"
+        android:textAlignment="center"
+        android:gravity="center"
+            android:fontFamily="s"
+            android:textStyle="bold"
+            android:layout_marginTop="90dp"
+            android:textSize="30dp"/>
+
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="For International"
+            android:textColor="#fff"
+            android:fontFamily="s"
+        android:textAlignment="center"
+        android:gravity="center"
+            android:textStyle="bold"
+
+        android:layout_marginTop="340dp"
+            android:textSize="30dp"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/usa"
+            android:layout_width="match_parent"
+            android:layout_height="222dp"
+            android:layout_marginTop="385dp"
+            android:src="@drawable/usa"/>
+
+</RelativeLayout>

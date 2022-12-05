@@ -1,0 +1,167 @@
+package com.letsdowebsite.creativedesignindia;
+
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
+import android.view.View;
+import android.webkit.DownloadListener;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.ImageView;
+
+public class Download extends AppCompatActivity {
+    private WebView mWebview;
+
+    ImageView home , back;
+    SwipeRefreshLayout swipe;
+    DrawerLayout drawerLayout;
+    ActionBarDrawerToggle drawerToggle;
+    android.support.design.widget.BottomNavigationView BottomNavigationView ;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.download);
+
+
+        home = (ImageView) findViewById( R.id.home );
+        back = (ImageView) findViewById( R.id.back );
+        back.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( Download.this, Splash.class );
+                startActivity( intent );
+            }
+        } );
+
+        swipe = (SwipeRefreshLayout) findViewById( R.id.swipe );
+        swipe.setOnRefreshListener( new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                WebAction();
+            }
+        } );
+
+        WebAction();
+    }
+
+
+
+    public void WebAction() {
+
+        mWebview = (WebView) findViewById(R.id.webview);
+        WebSettings webSettings = mWebview.getSettings();
+        webSettings.setDomStorageEnabled(true);
+        webSettings.setJavaScriptEnabled(true);
+
+
+        mWebview.loadUrl( "https://creativedesignindia.in/index.php?dispatch=orders.downloads" );
+        swipe.setRefreshing( true );
+        mWebview.setWebViewClient( new WebViewClient() {
+
+            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+
+                mWebview.loadUrl( "file:///android_asset/error.html" );
+
+            }
+
+
+
+            public void onPageFinished(WebView view, String url) {
+                // do your stuff here
+                swipe.setRefreshing( false );
+                initInstances();
+                super.onPageFinished(view, url);
+                invalidateOptionsMenu();
+
+            }
+
+            private void initInstances() {
+
+                com.github.clans.fab.FloatingActionButton menu1,menu2  ;
+
+
+                menu1 = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.subFloatingMenu1) ;
+                menu2 = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.subFloatingMenu2) ;
+
+
+
+                menu1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        Intent intent = new Intent(Intent.ACTION_DIAL);
+                        intent.setData( Uri.parse("tel:87440 99657"));
+                        startActivity(intent);
+                    }
+                });
+
+                menu2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        Intent i = new Intent( Download.this, Download.class );
+                        startActivity( i );
+
+                    }
+                });
+
+
+
+                drawerLayout = (DrawerLayout) findViewById( R.id.drawerLayout );
+                drawerToggle = new ActionBarDrawerToggle(
+                        Download.this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close );
+                drawerLayout.setDrawerListener( drawerToggle );
+
+                BottomNavigationView = (android.support.design.widget.BottomNavigationView) findViewById( R.id.bottom_navigation );
+                BottomNavigationView.setOnNavigationItemSelectedListener(
+                        new android.support.design.widget.BottomNavigationView.OnNavigationItemSelectedListener() {
+                            @Override
+
+                            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                                int id = menuItem.getItemId();
+                                switch (id) {
+                                    case R.id.nav_membership:
+                                        startActivity( new Intent( Download.this, Membership.class ) );
+                                        break;
+                                    case R.id.nav_supplier:
+                                        startActivity( new Intent( Download.this, Supplier.class ) );
+                                        break;
+                                    case R.id.nav_login:
+                                        startActivity( new Intent( Download.this, Login.class ) );
+                                        break;
+
+                                }
+                                return false;
+                            }
+                        } );
+            }
+        } );
+
+        mWebview.setDownloadListener(new DownloadListener() {
+            public void onDownloadStart(String url, String userAgent,
+                                        String contentDisposition, String mimetype,
+                                        long contentLength) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+
+
+        });
+    }
+
+
+}
+
+
+
+
+
+

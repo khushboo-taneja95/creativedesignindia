@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:id="@+id/container"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <FrameLayout
+            android:id="@+id/main_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+    </FrameLayout>
+
+
+
+
+    <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:background="@color/Black"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+        <ImageView
+                android:id="@+id/home"
+                android:layout_width="40dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="35dp"
+                android:layout_weight="1"
+                android:src="@drawable/memberr" />
+
+        <ImageView
+                android:id="@+id/home1"
+                android:layout_width="40dp"
+                android:layout_height="25dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/textView"
+                android:layout_weight="1"
+                android:src="@drawable/hmee"
+                android:text="start_service" />
+
+        <ImageView
+                android:id="@+id/home2"
+                android:layout_width="40dp"
+                android:layout_height="25dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:src="@drawable/as" />
+
+
+        <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="27dp"
+                android:text="Home"
+                android:textColor="@color/White" />
+
+
+        <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="Cart"
+                android:textColor="@color/White" />
+
+
+        <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:text="Membership"
+                android:textAlignment="center"
+                android:textColor="@color/White" />
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>

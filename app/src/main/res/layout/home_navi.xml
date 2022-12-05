@@ -1,0 +1,66 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+        <androidx.viewpager.widget.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="fill_parent"
+            android:layout_marginTop="37dp"
+                android:layout_height="250dp" >
+        </androidx.viewpager.widget.ViewPager>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categories"
+                android:layout_marginLeft="18dp"
+                android:textStyle="bold"
+                android:textColor="#b11e50"
+        />
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recylerview"
+                android:scrollbars="vertical" />
+
+   <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/recylerview1"
+                    android:scrollbars="vertical" />
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recylerview3"
+                android:scrollbars="vertical" />
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recylerview2"
+                android:scrollbars="vertical" />
+
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="52dp"
+                        android:background="#fff">
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

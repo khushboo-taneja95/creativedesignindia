@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="320dp">
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/card_view"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="3dp"
+        app:contentPadding="4dp" >
+
+  <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="251dp"
+                android:src="@drawable/design" />
+
+
+            <TextView
+                android:id="@+id/txtTitle1"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="240dp"
+                android:padding="5dp"
+                android:gravity="center"
+                android:text="How To Buy Membership In Creative Design India"
+                android:textColor="#000"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
